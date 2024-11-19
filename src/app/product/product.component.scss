@@ -1,0 +1,54 @@
+.card {
+    // border: 1px solid #90e0ef;
+    border: 1.17px solid rgba(133, 77, 255, .1019607843);
+    border-radius: 15px;
+    padding: 20px;
+
+    p {
+        margin-bottom: 2px;
+    }
+}
+
+.img-wrapper {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    margin: 0 auto;
+    border: 1.17px solid rgba(133, 77, 255, .1019607843);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.btn-wrapper {
+    margin: 0 auto;
+    // padding: 20px;
+}
+
+
+.btn-primary {
+    background: #90e0ef;
+    border: 1px solid #90e0ef;
+    color: #03045e;
+}
+
+.btn-primary:hover {
+    background: #03045e;
+    border: 1px solid #03045e;
+    color: #90e0ef;
+}
+
+.btn-cart {
+    background: #ffa62b;
+    border: 1px solid #ffa62b;
+    color: #4d3008;
+}
+
+.btn-cart:hover {
+    background: #4d3008;
+    border: 1px solid #4d3008;
+    color: #ffa62b;
+
+}

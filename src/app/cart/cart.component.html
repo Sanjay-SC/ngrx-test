@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Cart</h1>
+
+    <div class="cart-total"><p
+            class="cart-amount">
+            <span>The total amount of the cart</span>
+            <span>
+                <b>Rs {{ total }} </b>(tax included)
+            </span>
+        </p>
+        <!-- <button class="btn btn btn-primary">
+            Proceed to payment</button> -->
+    </div>
+
+    <div class="cart-list">
+        <div class="cart-item" *ngFor="let cart of cart$ | async" style="margin-bottom: 20px;">
+            <div class="cart-img"><img
+                    [src]="cart?.image"
+                    alt="img"></div>
+
+            <div class="cart-title">
+                <p>{{ cart?.name }}</p>
+                <p>Rs {{ cart?.price }}</p>
+            </div>
+
+            <div class="cart-btn">
+                <button class="btn btn-primary" (click)="delete(cart)">Delete</button>
+            </div>
+        </div>
+    </div>
+
+</div>

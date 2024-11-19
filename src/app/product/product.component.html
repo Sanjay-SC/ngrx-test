@@ -1,0 +1,25 @@
+
+<!-- <div *ngFor="let product of product$ | async">
+    {{product.name}}
+</div> -->
+
+
+<div class="container row">
+    <div class="col-lg-3" *ngFor="let product of product$ | async" style="margin-bottom: 20px;">
+        <div class="card">
+            <div class="img-wrapper">
+                <img [src]="product?.image" alt="">
+            </div>
+            <p class="text-center">
+                {{product.name}}
+            </p>
+            <p class="text-center">
+                Rs: {{product.price}}
+            </p>
+            <div class="btn-wrapper">
+            <button *ngIf="!hideBtnCart(product.id)" (click)="addToCart(product)" class="btn btn-primary">Add to cart</button>
+            <button *ngIf="hideBtnCart(product.id)" (click)="cart()" class="btn btn-cart">View in cart</button>
+            </div>
+        </div>
+    </div>
+   </div>
