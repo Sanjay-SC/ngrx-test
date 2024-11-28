@@ -54,16 +54,24 @@ export class ProductComponent {
   }
 
   addToCart(product: any) {
+    let idx = this.cartList.findIndex((x: any) => x.id == product.id);
+    if (idx == -1) {
 
-    let text = `Want to add ${product.name}?`;
-    if (confirm(text) == true) {
+      let text = `Want to add ${product.name}?`;
+      if (confirm(text) == true) {
 
-      this.toastr.success('Item added to cart', 'Suucess', {
-        timeOut: 3000
-      });
-      this.cartService.add(product);
-    } else {
+        this.toastr.success('Item added to cart', 'Suucess', {
+          timeOut: 3000
+        });
+        this.cartService.add(product);
+      } else {
+      }
     }
+
+    else {
+      this.cart();
+    }
+
   }
 
 }

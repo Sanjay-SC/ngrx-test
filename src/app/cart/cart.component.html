@@ -13,18 +13,22 @@
     </div>
 
     <div class="cart-list">
-        <div class="cart-item" *ngFor="let cart of cart$ | async" style="margin-bottom: 20px;">
+        <div class="cart-item" *ngFor="let cart of cart$ | async"
+            style="margin-bottom: 20px;">
             <div class="cart-img"><img
                     [src]="cart?.image"
-                    alt="img"></div>
+                    alt="img">
+                </div>
 
             <div class="cart-title">
-                <p>{{ cart?.name }}</p>
-                <p>Rs {{ cart?.price }}</p>
+                <p class="name">{{ cart?.name }}</p>
+                <p class="rs">{{ cart?.desp }}</p>
+                <p class="rs">Rs <span class="name">{{ cart?.price }}</span></p>
             </div>
 
             <div class="cart-btn">
-                <button class="btn btn-primary" (click)="delete(cart)">Delete</button>
+                <button class="btn btn-primary"
+                    (click)="delete(cart)">Delete</button>
             </div>
         </div>
     </div>

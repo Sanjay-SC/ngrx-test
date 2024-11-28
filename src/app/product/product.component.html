@@ -3,23 +3,45 @@
     {{product.name}}
 </div> -->
 
-
 <div class="container row">
-    <div class="col-lg-3" *ngFor="let product of product$ | async" style="margin-bottom: 20px;">
+    <div class="col-lg-3" *ngFor="let product of product$ | async"
+        style="margin-bottom: 20px;">
         <div class="card">
             <div class="img-wrapper">
-                <img [src]="product?.image" alt="">
+                <img [src]="product?.image" alt>
+
+                <div class="icn-grp">
+                    <div class="icn-wrapper" style="margin-bottom: -3px;">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="cart-icn">
+                        <div class="icn-wrapper" (click)="addToCart(product)">
+                            <i class="fa fa-shopping-cart"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="icn-wrapper">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="text-center">
+            <p class="text-center name">
                 {{product.name}}
             </p>
             <p class="text-center">
-                Rs: {{product.price}}
+                <span class="rs"> Rs: </span> <span
+                    class="name">{{product.price}}</span>
             </p>
+            <div class="marquee">
+                <span>{{product.desp}}</span>
+            </div>
             <div class="btn-wrapper">
-            <button *ngIf="!hideBtnCart(product.id)" (click)="addToCart(product)" class="btn btn-primary">Add to cart</button>
-            <button *ngIf="hideBtnCart(product.id)" (click)="cart()" class="btn btn-cart">View in cart</button>
+                <button *ngIf="!hideBtnCart(product.id)"
+                    (click)="addToCart(product)" class="btn btn-primary">Add to
+                    cart</button>
+                <button *ngIf="hideBtnCart(product.id)" (click)="cart()"
+                    class="btn btn-cart">View in cart</button>
             </div>
         </div>
     </div>
-   </div>
+</div>
