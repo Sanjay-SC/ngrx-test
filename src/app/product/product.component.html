@@ -4,9 +4,9 @@
 </div> -->
 
 <div class="container row">
-    <div class="col-lg-3" *ngFor="let product of product$ | async"
+    <div class="col-lg-3" *ngFor="let product of product$ | async; let idx = index"
         style="margin-bottom: 20px;">
-        <div class="card">
+        <!-- <div class="card">
             <div class="img-wrapper">
                 <img [src]="product?.image" alt>
 
@@ -36,12 +36,13 @@
                 <span>{{product.desp}}</span>
             </div>
             <div class="btn-wrapper">
-                <button *ngIf="!hideBtnCart(product.id)"
-                    (click)="addToCart(product)" class="btn btn-primary">Add to
+                <button *ngIf="!hideBtnCart(product.id)" id="{{'btn-'+idx}}"
+                    (click)="addToCart(product)" class="btn btn-primary" >Add to
                     cart</button>
                 <button *ngIf="hideBtnCart(product.id)" (click)="cart()"
                     class="btn btn-cart">View in cart</button>
             </div>
-        </div>
+        </div> -->
+        <app-card-item *ngIf="product" [product]="product" [idx]="idx"></app-card-item>
     </div>
 </div>

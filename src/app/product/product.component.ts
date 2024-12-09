@@ -7,11 +7,12 @@ import { CartService } from '../services/cart.service';
 import { Router } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { ToastrService } from 'ngx-toastr';
+import { ComponentsModule } from '../components/components.module';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, ToastrModule],
+  imports: [CommonModule, ToastrModule, ComponentsModule],
   providers: [
     // provideToastr(), // Toastr providers
   ],

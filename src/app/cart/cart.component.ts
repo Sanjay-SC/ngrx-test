@@ -7,6 +7,7 @@ import { CartService } from '../services/cart.service';
 import { provideToastr, ToastrModule } from 'ngx-toastr';
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -43,10 +44,10 @@ export class CartComponent {
     let text = `Want to delete ${product.name}?`;
     if (confirm(text) == true) {
 
-      this.toastr.success('Item added to cart', 'Suucess', {
+      this.toastr.success('Item added to cart', 'Success', {
         timeOut: 3000
       });
-      this.cartService.delete(product.id);
+      this.cartService.delete(product.ids);
     } else {
     }
   }
